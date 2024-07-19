@@ -19,11 +19,13 @@ div {
 
 `
 
-export const Title = styled.h3`
+export const Title = styled.textarea`
 
 font-size: 18px;
 font-weight: bold;
 margin-left: 8px;
+resize: none;
+border: none;
 
 
 `

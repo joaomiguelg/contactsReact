@@ -10,22 +10,23 @@ import { useEffect, useState } from 'react';
 type Props = ContactClass
 
 
-export const Contact = ({id, name, adress: originalAdress, mail: originalMail}: Props) => {
+export const Contact = ({id, name: originalName, tel: originalTel, mail: originalMail}: Props) => {
 
     const dispatch = useDispatch();
     const [isEditing, setIsEditing] = useState(false);
-    const [addresValue, setAddresValue] = useState('');
+    const [telValue, setTelValue] = useState('');
     const [mailValue, setMailValue] = useState('');
+    const [nameValue, setNameValue] = useState('')
     
 
 
 
     
   useEffect(() => {
-    if (originalAdress.length > 0) {
-      setAddresValue(originalAdress);
+    if (originalTel.length > 0) {
+      setTelValue(originalTel);
     }
-  }, [originalAdress]);
+  }, [originalTel]);
 
   useEffect(() => {
     if (originalMail.length > 0) {
@@ -33,11 +34,18 @@ export const Contact = ({id, name, adress: originalAdress, mail: originalMail}: 
     }
   }, [originalMail]);
 
+  useEffect(() => {
+    if (originalName.length > 0) {
+      setNameValue(originalName);
+    }
+  }, [originalName]);
+
 
   const cancelEdit = () => {
     setIsEditing(false);
-    setAddresValue(originalAdress);
-    setMailValue(originalMail)
+    setTelValue(originalTel);
+    setMailValue(originalMail);
+    setNameValue(originalName)
   };
 
 
@@ -46,9 +54,9 @@ export const Contact = ({id, name, adress: originalAdress, mail: originalMail}: 
 
     return(
         <S.Contact>
-            <S.Title>{name}</S.Title>
-            <p>Endereço:</p>
-            <S.Adress value={addresValue} disabled={!isEditing} onChange={(event) => setAddresValue(event.target.value)}/>
+            <S.Title value={nameValue} disabled={!isEditing} onChange={(event) => setNameValue(event.target.value)}></S.Title>
+            <p>Telefone:</p>
+            <S.Adress value={telValue} disabled={!isEditing} onChange={(event) => setTelValue(event.target.value)}/>
             <p>E-mail:</p>
             <S.Mail value={mailValue} disabled={!isEditing} onChange={(event) => setMailValue(event.target.value)}></S.Mail>
             <div>
@@ -59,8 +67,8 @@ export const Contact = ({id, name, adress: originalAdress, mail: originalMail}: 
                 dispatch(
                   edit({
                     id,
-                    name,
-                    adress: originalAdress,
+                    name: originalName,
+                    tel: originalTel,
                     mail: originalMail,
                   })
                 );

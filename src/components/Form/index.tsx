@@ -10,7 +10,7 @@ import { cadastrar } from "../../store/reducers/contacts";
 export const Form = () => {
   const [name, setName] = useState("");
   const [mail, setMail] = useState("");
-  const [adress, setAdress] = useState("")
+  const [tel, setTel] = useState("")
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ export const Form = () => {
     event.preventDefault()
     
     dispatch(cadastrar({
-      name, mail, adress
+      name, mail, tel
     }))
     navigate('/')
   }
@@ -36,8 +36,8 @@ export const Form = () => {
         
         />
         <textarea
-          value={adress}
-          onChange={(event) => setAdress(event.target.value)}
+          value={tel}
+          onChange={(event) => setTel(event.target.value)}
           placeholder="Endereço"
         />
         <textarea

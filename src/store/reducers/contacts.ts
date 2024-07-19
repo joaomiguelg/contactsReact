@@ -13,25 +13,25 @@ const initialState: ContactState = {
         {
             id: 1,
             name: "Joao",
-            adress: "Rua joao silva",
+            tel: "1999999-9999",
             mail: "joao@gmail.com"
         }, 
         {
             id: 2,
             name: "Joao",
-            adress: "Rua joao silva",
+            tel: "1999999-9999",
             mail: "joao@gmail.com"
         },
         {
             id: 3,
             name: "Joao",
-            adress: "Rua joao silva",
+            tel: "1999999-9999",
             mail: "joao@gmail.com"
         }, 
         {
             id: 4,
             name: "Joao",
-            adress: "Rua joao silva",
+            tel: "1999999-9999",
             mail: "joao@gmail.com"
         }, 
     ]

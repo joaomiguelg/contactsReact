@@ -28,7 +28,7 @@ const List = () => {
             <ul>
                 {contact.map((c) => (
                     <li key={c.id}>
-                        <Contact id={c.id} name={c.name} adress={c.adress} mail={c.mail} />
+                        <Contact id={c.id} name={c.name} tel={c.tel} mail={c.mail} />
                     </li>
                 ))}
             </ul>   

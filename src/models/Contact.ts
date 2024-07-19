@@ -1,12 +1,12 @@
 class ContactClass {
     id: number
     name: string
-    adress: string
+    tel: string
     mail: string
 
-    constructor(id: number, name: string, adress: string, mail: string) {
+    constructor(id: number, name: string, tel: string, mail: string) {
         this.name = name
-        this.adress = adress
+        this.tel = tel
         this.mail = mail
         this.id = id
     }
